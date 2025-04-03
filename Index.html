@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>صفحه اصلی</title>
+    <link href="https://fonts.googleapis.com/css2?family=Chicle&family=Poetsen+One&family=Rubik+Dirt&family=Rubik+Moonrocks&family=Winky+Sans:ital,wght@0,300..900;1,300..900&family=Yrsa:ital,wght@0,300..700;1,300..700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            background-color: #3d2a21;
+            min-height: 100vh;
+            font-family: Arial, sans-serif;
+            padding-top: 60px;
+        }
+
+        .top-bar {
+            width: 100%;
+            height: 70px;
+            background-color: #533525;
+            border-bottom: 3px solid #ffcc00;
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 1000;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 20px;
+            flex-direction: row-reverse;
+        }
+
+        .logo {
+            height: 60px;
+            width: auto;
+        }
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 30px;
+        }
+
+        .nav-links a {
+            color: #ffcc00;
+            text-decoration: none;
+            font-size: 16px;
+            transition: all 0.3s ease;
+            font-family: 'Poetsen One', sans-serif;
+        }
+
+        .nav-links a:hover {
+            color: #e07b39;
+            transform: scale(1.1);
+        }
+
+        .connect-wallet {
+            background-color: #ffcc00;
+            color: #391504cc !important;
+            padding: 10px 20px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            font-family: 'Poetsen One', sans-serif;
+        }
+
+        .connect-wallet:hover {
+            transform: scale(1.1); 
+            background: #e07b39;
+        }
+
+        .coming-soon {
+            color: #ffcc00;
+            font-family: 'Poetsen One', sans-serif;
+            margin-left: 20px;
+        }
+
+        .hamburger {
+            display: none;
+            cursor: pointer;
+            padding: 10px;
+        }
+
+        .hamburger span {
+            display: block;
+            width: 25px;
+            height: 3px;
+            background-color: #ffcc00;
+            margin: 5px 0;
+            transition: all 0.3s ease;
+        }
+
+        /* تنظیمات ریسپانسیو */
+        @media screen and (max-width: 768px) {
+            .top-bar {
+                height: 50px;
+                padding: 0 10px;
+            }
+            body {
+                padding-top: 50px;
+            }
+            .logo {
+                height: 40px;
+            }
+            .hamburger {
+                display: block;
+            }
+            .nav-links {
+                display: none;
+                position: fixed;
+                top: 50px;
+                right: 0;
+                width: 100%;
+                background-color: #533525;
+                flex-direction: column;
+                padding: 20px;
+                gap: 20px;
+                border-bottom: 3px solid #ffcc00;
+            }
+            .nav-links.active {
+                display: flex;
+            }
+            .coming-soon {
+                margin: 0;
+                text-align: center;
+            }
+            .connect-wallet {
+                text-align: center;
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="top-bar">
+        <img src="https://img12.pixhost.to/images/1350/582557662_wlc.png" alt="لوگو" class="logo">
+        <div class="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+        <div class="nav-links">
+            <span class="coming-soon">Coming soon ...</span>
+            <a href="#" class="connect-wallet">Connect Wallet</a>
+            <a href="#">Home</a>
+            <a href="#">Tipping</a>
+            <a href="#">Claim</a>
+            <a href="#">Snapshot</a>
+            <a href="#">Tokenomics</a>
+        </div>
+    </div>
+
+    <script>
+        const hamburger = document.querySelector('.hamburger');
+        const navLinks = document.querySelector('.nav-links');
+        
+        hamburger.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+            hamburger.classList.toggle('active');
+        });
+    </script>
+</body>
+</html>
