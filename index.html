@@ -19,9 +19,29 @@
             min-height: 100vh;
             font-family: Arial, sans-serif;
             padding-top: 60px;
+            position: relative;
+            overflow-x: hidden;
+        }
+
+        #orb-background {
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0.3;
+        }
+
+        @media screen and (max-width: 480px) {
+            #orb-background {
+                opacity: 0.15;
+            }
         }
 
         .top-bar {
+            position: relative;
+            z-index: 1000;
             width: 100%;
             height: 70px;
             background-color: #533525;
@@ -29,7 +49,6 @@
             position: fixed;
             top: 0;
             left: 0;
-            z-index: 1000;
             display: flex;
             align-items: center;
             justify-content: space-between;
@@ -161,6 +180,9 @@
             display: flex;
             justify-content: center;
             gap: 30px;
+            width: 100%;
+            position: relative;
+            z-index: 10;
         }
 
         .action-button {
@@ -169,18 +191,25 @@
             border: none;
             background: none;
             cursor: pointer;
-            transition: transform 0.3s ease;
             padding: 0;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            z-index: 10;
         }
 
         .action-button img {
             width: 100%;
             height: 100%;
             object-fit: contain;
+            transition: transform 0.3s ease;
         }
 
-        .action-button:hover {
+        .action-button:hover img {
             transform: scale(1.1);
+            z-index: 10;
         }
 
         .nuts-title {
@@ -200,6 +229,7 @@
             margin: 0 0px 0px;
             text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
         }
+        
 
         /* تنظیمات ریسپانسیو */
         @media screen and (max-width: 680px) {
@@ -241,6 +271,7 @@
             }
             .image-container {
                 padding: 0 10px;
+                z-index: 1;
             }
             .text-overlay {
                 width: 85%;
@@ -307,6 +338,8 @@
             padding: 20px;
             flex-wrap: wrap;
             margin-top: -150px;
+            z-index: 1;
+
         }
 
         .features-section {
@@ -330,7 +363,7 @@
 
         .snapshot-text-overlay {
             position: absolute;
-            top: 35%;
+            top: 40%;
             left: 50%;
             transform: translate(-50%, -50%);
             text-align: center;
@@ -352,26 +385,30 @@
         }
 
         .snapshot-text-overlay h3 {
-            color: #7a3802;
+            color: #623101;
             font-size: clamp(1.4rem, 2vw, 2.5rem);
             margin-bottom: 0.5rem;
         }
 
         .claim-text-overlay h3 {
-            color: #7a3802;
+            color: #623101;
             font-size: clamp(1.4rem, 2vw, 2.5rem);
             margin-bottom: 0.5rem;
         }
 
         .snapshot-text-overlay p {
-            font-size: clamp(1.2rem, 1.5vw, 1.5rem);
+            color: #c55a02;
+            font-size: clamp(0.7rem, 1.5vw, 1.5rem);
             line-height: 1.3;
+            margin-top: 10px;
         }
 
         .claim-text-overlay p {
+            color: #c55a02;
             font-size: clamp(1.2rem, 1.5vw, 1.5rem);
             line-height: 1.3;
             margin-left: 10px;
+            margin-top: 10px;
         }
 
         @media screen and (max-width: 1800px) {
@@ -407,7 +444,7 @@
                 max-width: 70%;
             }
             .claim-text-overlay h3 {
-                font-size: clamp(1rem, 1.5vw, 1.8rem);
+                font-size: clamp(1.2rem, 2.2vw, 2rem);
             }
             .claim-text-overlay p {
                 font-size: clamp(0.8rem, 1.1vw, 1.1rem);
@@ -462,7 +499,7 @@
         .nft-image {
             width: 800px;
             height: 800px;
-            object-fit: contain;
+            object-fit:scale-down;
             transition: transform 0.3s ease;
             position: relative;
         }
@@ -475,20 +512,26 @@
             left: 65%;
             transform: translate(-50%, -50%);
             text-align: center;
+            padding: 0px;
             width: 57%;
             color: white;
             font-family: 'Poetsen One';
+            pointer-events: none;
+            z-index: 0;
         }
 
         .nft-text-overlay-allowance {
             position: absolute;
             top: 38%;
             left: 50%;
+            padding: 0;
             transform: translate(-50%, -50%);
             text-align: center;
             width: 80%;
             color: white;
             font-family: 'Poetsen One';
+            pointer-events: none;
+            z-index: 0;
         }
 
         .nft-text-overlay h3, .nft-text-overlay-allowance h3 {
@@ -569,7 +612,7 @@
         @media screen and (max-width: 480px) {
             .nft-section {
                 padding: 20px;
-                margin-top: -30px;
+                margin-top: -40px;
                 gap: 10px;
             }
             .nft-image {
@@ -591,8 +634,8 @@
             left: 50%;
             transform: translate(-50%, -50%);
             text-align: center;
-            width: 80%;
-            color: white;
+            width: 75%;
+            color: #c55a02;
             font-family: 'Poetsen One';
         }
             .snapshot-text-overlay h3 {
@@ -600,13 +643,350 @@
 
             }
             .snapshot-text-overlay p {
+                color: #c55a02;
                 font-size: clamp(0.3rem, 0.6vw, 0.5rem);
                 margin-top: 0px;
             }
         }
+
+        .tipping-text-overlay {
+            position: absolute;
+            top: 47%;
+            left: 63%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+            width: 90%;
+            max-width:65%;
+            color: #c55a02;
+            font-family: 'Poetsen One';
+        }
+
+        .tipping-text-overlay h3 {
+            color: #623101;
+            font-size: clamp(1.4rem, 2vw, 2.5rem);
+            margin-bottom: 0.5rem;
+        }
+
+        .tipping-text-overlay p {
+
+            font-size: clamp(0.6rem, 1vw, 1rem);
+            line-height: 1.3;
+            margin-left: 10px;
+        }
+
+
+        @media screen and (max-width: 680px) {
+            .features-section {
+                gap: 10px;
+                margin-top: -60px;
+            }
+            .feature-image {
+                width: 110px;
+                height: 110px;
+            }
+            .tipping-text-overlay {
+                top: 49%;
+                left: 60%;
+                max-width: 55%;
+            }
+            .tipping-text-overlay h3 {
+                font-size: clamp(0.6rem, 1vw, 1rem);
+            }
+            .tipping-text-overlay p {
+                font-size: clamp(0.25rem, 0.55vw, 0.55rem);
+                margin-left: 5px;
+            }
+        }
+
+        .tokenomics-section {
+            padding: 50px 20px;
+            background: rgba(30, 20, 15, 0.5);
+            margin: 40px 0;
+            border-radius: 15px;
+            box-shadow: 0 0 20px rgba(255, 204, 0, 0.2);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            width: 100%;
+            box-sizing: border-box;
+        }
+
+        .tokenomics-title {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .tokenomics-title h2 {
+            color: #ffcc00;
+            font-family: 'Poetsen One';
+            font-size: clamp(24px, 4vw, 36px);
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+            letter-spacing: 2px;
+        }
+
+        .tokenomics-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            gap: 30px;
+            flex-wrap: wrap;
+        }
+
+        .tokenomics-description {
+            flex: 1;
+            min-width: 300px;
+            color: #ffffff;
+            font-family: 'Winky Sans';
+            font-size: clamp(12px, 1.8vw, 18px);
+            line-height: 1.6;
+            text-align: left;
+            direction: ltr;
+            padding: 15px;
+            box-sizing: border-box;
+        }
+
+        .tokenomics-chart {
+            flex: 1;
+            min-width: 300px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 15px;
+            box-sizing: border-box;
+        }
+
+        .tokenomics-distribution {
+            flex: 1;
+            min-width: 300px;
+            color: #ffffff;
+            font-family: 'Winky Sans';
+            text-align: left;
+            direction: ltr;
+            padding: 15px;
+            box-sizing: border-box;
+        }
+
+        .tokenomics-distribution h3 {
+            color: #ffcc00;
+            font-family: 'Poetsen One';
+            font-size: clamp(16px, 2.5vw, 26px);
+            margin-bottom: 20px;
+            text-align: left;
+        }
+
+        .tokenomics-distribution ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .tokenomics-distribution li {
+            font-size: clamp(12px, 1.8vw, 18px);
+            margin-bottom: 15px;
+            padding: 10px 15px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 8px;
+            transition: all 0.3s ease;
+            text-align: left;
+            cursor: pointer;
+        }
+
+        .tokenomics-distribution li:hover {
+            background: rgba(255, 204, 0, 0.1);
+            transform: translateX(5px);
+        }
+
+        @media screen and (max-width: 1200px) {
+            .tokenomics-container {
+                flex-direction: column;
+                align-items: center;
+                gap: 40px;
+            }
+
+            .tokenomics-description,
+            .tokenomics-chart,
+            .tokenomics-distribution {
+                width: 100%;
+                max-width: 800px;
+                min-width: auto;
+            }
+
+            .tokenomics-chart canvas {
+                width: 100%;
+                max-width: 400px;
+                height: auto;
+            }
+        }
+
+        @media screen and (max-width: 768px) {
+            .tokenomics-section {
+                padding: 30px 15px;
+                margin: 30px 0;
+            }
+
+            .tokenomics-container {
+                gap: 30px;
+            }
+
+            .tokenomics-description,
+            .tokenomics-chart,
+            .tokenomics-distribution {
+                max-width: 100%;
+                padding: 10px;
+            }
+
+            .tokenomics-chart canvas {
+                max-width: 300px;
+            }
+        }
+
+        @media screen and (max-width: 480px) {
+            .tokenomics-section {
+                padding: 5px 2px;
+                margin: 10px 0;
+                
+            }
+
+            .tokenomics-container {
+                gap: 5px;
+            }
+
+            .tokenomics-description,
+            .tokenomics-chart,
+            .tokenomics-distribution {
+                padding: 2px;
+            }
+
+            .tokenomics-chart canvas {
+                max-width:70px;
+            }
+
+            .tokenomics-distribution li {
+                padding: 2px 3px;
+                margin-bottom: 2px;
+                font-size: 12px;
+            }
+
+            .tokenomics-description p {
+                font-size: 12px;
+                line-height: 1.4;
+            }
+        }
+
+        @media screen and (max-width: 320px) {
+            .tokenomics-section {
+                padding: 15px 8px;
+                margin: 15px 0;
+            }
+
+            .tokenomics-container {
+                gap: 15px;
+            }
+
+            .tokenomics-chart canvas {
+                max-width: 200px;
+            }
+
+            .tokenomics-distribution li {
+                padding: 6px 10px;
+                margin-bottom: 8px;
+                font-size: 11px;
+            }
+
+            .tokenomics-description p {
+                font-size: 11px;
+                line-height: 1.3;
+            }
+        }
+
+        footer {
+            background: rgba(61, 42, 33, 0.9);
+            padding: 30px 20px;
+            text-align: center;
+            border-top: 2px solid #ffcc00;
+            position: relative;
+            z-index: 1;
+            margin-top: 50px;
+            box-shadow: 0 -5px 15px rgba(255, 204, 0, 0.1);
+        }
+
+        footer p {
+            color: #ffcc00;
+            font-size: clamp(14px, 2.5vw, 18px);
+            margin-bottom: 10px;
+            font-family: 'Poetsen One';
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+        }
+
+        footer h6 {
+            color: #e07b39;
+            font-size: clamp(12px, 2vw, 16px);
+            font-family: 'Winky Sans';
+            font-weight: normal;
+            opacity: 0.8;
+            transition: opacity 0.3s ease;
+        }
+
+        footer h6:hover {
+            opacity: 1;
+        }
+
+        .features-section > div,
+        .nft-section > div {
+            position: relative;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+
+        .features-section > div:hover,
+        .nft-section > div:hover {
+            transform: scale(1.05);
+        }
+
+        .features-section > div:hover .tipping-text-overlay h3,
+        .features-section > div:hover .claim-text-overlay h3,
+        .features-section > div:hover .snapshot-text-overlay h3,
+        .nft-section > div:hover .nft-text-overlay h3,
+        .nft-section > div:hover .nft-text-overlay-allowance h3 {
+            color: #ffcc00;
+            transition: color 0.3s ease;
+        }
+
+        .features-section > div:hover .tipping-text-overlay p,
+        .features-section > div:hover .claim-text-overlay p,
+        .features-section > div:hover .snapshot-text-overlay p,
+        .nft-section > div:hover .nft-text-overlay p,
+        .nft-section > div:hover .nft-text-overlay-allowance p {
+            color: #e07b39;
+            transition: color 0.3s ease;
+        }
+
+        .nft-section > div {
+            position: relative;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+            width: fit-content;
+        }
+
+        .nft-section > div:hover {
+            transform: scale(1.05);
+        }
+
+        .nft-section > div:hover .nft-text-overlay h3,
+        .nft-section > div:hover .nft-text-overlay-allowance h3 {
+            color: #ffcc00;
+            transition: color 0.3s ease;
+        }
+
+        .nft-section > div:hover .nft-text-overlay p,
+        .nft-section > div:hover .nft-text-overlay-allowance p {
+            color: #e07b39;
+            transition: color 0.3s ease;
+        }
     </style>
 </head>
 <body>
+    <canvas id="orb-background"></canvas>
     <div class="top-bar">
         <img src="https://img12.pixhost.to/images/1350/582557662_wlc.png" alt="لوگو" class="logo">
         <div class="hamburger">
@@ -636,12 +1016,12 @@
             <h2>How to Participate?</h2>
             <p>Join the Nuts community by grabbing an OG NFT or an Allowance NFT. These are your keys to unlocking exclusive perks, tipping privileges, and immersive gameplay. Ready to jump in? It's as simple as owning one of these NFTs!</p>
             <div class="buttons-container">
-                <button class="action-button">
+                <a href="https://foundation.app/mint/base/0x8AaB3b53d0F29A3EE07B24Ea253494D03a42e2fB" target="_blank" class="action-button">
                     <img src="https://img12.pixhost.to/images/1351/582582930_og-button.png" alt="OG Button">
-                </button>
-                <button class="action-button">
+                </a>
+                <a href="https://foundation.app/mint/base/0x36d4a78d0FB81A16A1349b8f95AF7d5d3CA25081" target="_blank" class="action-button">
                     <img src="https://img12.pixhost.to/images/1351/582584740_allowance-button.png" alt="Allowance Button">
-                </button>
+                </a>
             </div>
         </div>
     </div>
@@ -664,7 +1044,15 @@
     </div>
 
     <div class="features-section">
-        <img src="https://img12.pixhost.to/images/1373/582832400_tip.png" alt="Tipping" class="feature-image">
+        <div style="position: relative;">
+            <img src="https://img12.pixhost.to/images/1373/582832400_tip.png" alt="Tipping" class="feature-image">
+            <div class="tipping-text-overlay">
+                <h3>Tipping</h3>
+                <p>? How to Tip 🔸 <br>
+                Spread the love in our /nuts channel  Once you've got your 🥜 allowance, tip your friends by typing:
+                 *(Number)x🥜*  It's a simple, fun way to share the wealth and strengthen our community</p>
+            </div>
+        </div>
         <div style="position: relative;">
             <img src="https://img12.pixhost.to/images/1373/582833792_claim.png" alt="Claim" class="feature-image">
             <div class="claim-text-overlay">
@@ -683,6 +1071,37 @@
         </div>
     </div>
 
+    <!-- Tokenomics Section -->
+    <section class="tokenomics-section">
+        <div class="tokenomics-title">
+            <h2>TOKENOMICS</h2>
+        </div>
+        <div class="tokenomics-container">
+            <div class="tokenomics-distribution">
+                <h3>Token Distribution</h3>
+                <ul>
+                    <li>Community Rewards: 30%</li>
+                    <li>Team & Development: 15%</li>
+                    <li>Liquidity Pool: 20%</li>
+                    <li>Remaining: 35%</li>
+                </ul>
+            </div>
+            <div class="tokenomics-chart">
+                <canvas id="tokenomics-chart"></canvas>
+            </div>
+            <div class="tokenomics-description">
+                <p>Our token distribution is carefully designed to ensure fair and sustainable growth of the Nuts ecosystem.</p>
+                <p>The majority of tokens are allocated to community rewards, while maintaining a balanced distribution for development and liquidity.</p>
+                <p>Community members can earn tokens through various activities including tipping, participating in events, and holding NFTs. This creates a vibrant and engaged community while ensuring long-term sustainability.</p>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>  2025Nuts  - All Rights Reserved© </p>
+        <h6>created by arsalang.eth & jeyloo.eth</h6>
+    </footer>
+
     <script>
         const hamburger = document.querySelector('.hamburger');
         const navLinks = document.querySelector('.nav-links');
@@ -691,6 +1110,211 @@
             navLinks.classList.toggle('active');
             hamburger.classList.toggle('active');
         });
+
+        class NutsApp {
+            constructor() {
+                this.orbBackgroundCanvas = document.getElementById('orb-background');
+                this.initBackgroundOrb();
+                this.render();
+
+                this.mouseX = 0;
+                this.mouseY = 0;
+                document.addEventListener('mousemove', (e) => {
+                    this.mouseX = (e.clientX / window.innerWidth) * 2 - 1;
+                    this.mouseY = -(e.clientY / window.innerHeight) * 2 + 1;
+                });
+            }
+
+            initBackgroundOrb() {
+                this.bgOrbGl = this.orbBackgroundCanvas.getContext('webgl');
+                this.resizeCanvas();
+                window.addEventListener('resize', () => this.resizeCanvas());
+
+                const vsSource = `
+                    attribute vec3 a_position;
+                    uniform mat4 u_projection;
+                    uniform mat4 u_modelView;
+                    uniform float u_time;
+                    void main() {
+                        vec3 pos = a_position;
+                        float pulse = sin(u_time + length(pos)) * 0.1;
+                        pos += normalize(pos) * pulse;
+                        gl_Position = u_projection * u_modelView * vec4(pos, 1.0);
+                        gl_PointSize = 2.0;
+                    }
+                `;
+                const fsSource = `
+                    precision mediump float;
+                    uniform vec4 u_color;
+                    void main() {
+                        vec2 uv = gl_PointCoord - vec2(0.5);
+                        float dist = length(uv);
+                        if (dist > 0.5) discard;
+                        float alpha = 1.0 - dist * 2.0;
+                        float centerFade = clamp(length(gl_FragCoord.xy / vec2(${window.innerWidth}.0, ${window.innerHeight}.0) - 0.5) * 2.0, 0.0, 1.0);
+                        gl_FragColor = vec4(u_color.rgb, alpha * (1.0 - centerFade * 0.7));
+                    }
+                `;
+
+                const vertexShader = this.bgOrbGl.createShader(this.bgOrbGl.VERTEX_SHADER);
+                this.bgOrbGl.shaderSource(vertexShader, vsSource);
+                this.bgOrbGl.compileShader(vertexShader);
+
+                const fragmentShader = this.bgOrbGl.createShader(this.bgOrbGl.FRAGMENT_SHADER);
+                this.bgOrbGl.shaderSource(fragmentShader, fsSource);
+                this.bgOrbGl.compileShader(fragmentShader);
+
+                this.bgOrbProgram = this.bgOrbGl.createProgram();
+                this.bgOrbGl.attachShader(this.bgOrbProgram, vertexShader);
+                this.bgOrbGl.attachShader(this.bgOrbProgram, fragmentShader);
+                this.bgOrbGl.linkProgram(this.bgOrbProgram);
+
+                this.bgOrbPositionLoc = this.bgOrbGl.getAttribLocation(this.bgOrbProgram, 'a_position');
+                this.bgOrbProjectionLoc = this.bgOrbGl.getUniformLocation(this.bgOrbProgram, 'u_projection');
+                this.bgOrbModelViewLoc = this.bgOrbGl.getUniformLocation(this.bgOrbProgram, 'u_modelView');
+                this.bgOrbColorLoc = this.bgOrbGl.getUniformLocation(this.bgOrbProgram, 'u_color');
+                this.bgOrbTimeLoc = this.bgOrbGl.getUniformLocation(this.bgOrbProgram, 'u_time');
+
+                this.bgOrbParticleCount = 10000;
+                this.bgOrbParticles = new Float32Array(this.bgOrbParticleCount * 3);
+                for (let i = 0; i < this.bgOrbParticleCount; i++) {
+                    const x = (Math.random() - 0.5) * 40;
+                    const y = (Math.random() - 0.5) * 40;
+                    const z = (Math.random() - 0.5) * 40;
+                    this.bgOrbParticles[i * 3] = x;
+                    this.bgOrbParticles[i * 3 + 1] = y;
+                    this.bgOrbParticles[i * 3 + 2] = z;
+                }
+
+                this.bgOrbBuffer = this.bgOrbGl.createBuffer();
+            }
+
+            resizeCanvas() {
+                this.orbBackgroundCanvas.width = window.innerWidth;
+                this.orbBackgroundCanvas.height = window.innerHeight;
+            }
+
+            renderBackgroundOrb(time) {
+                const { bgOrbGl } = this;
+                bgOrbGl.viewport(0, 0, bgOrbGl.drawingBufferWidth, bgOrbGl.drawingBufferHeight);
+                bgOrbGl.clearColor(0, 0, 0, 0);
+                bgOrbGl.clear(bgOrbGl.COLOR_BUFFER_BIT);
+
+                bgOrbGl.useProgram(this.bgOrbProgram);
+
+                const projection = this.createProjectionMatrix(bgOrbGl.drawingBufferWidth, bgOrbGl.drawingBufferHeight, 90);
+                bgOrbGl.uniformMatrix4fv(this.bgOrbProjectionLoc, false, projection);
+
+                const modelView = this.createModelViewMatrix();
+                bgOrbGl.uniformMatrix4fv(this.bgOrbModelViewLoc, false, modelView);
+
+                bgOrbGl.uniform4f(this.bgOrbColorLoc, 1.0, 0.8, 0.0, 1.5);
+                bgOrbGl.uniform1f(this.bgOrbTimeLoc, time * 0.0005);
+
+                bgOrbGl.bindBuffer(bgOrbGl.ARRAY_BUFFER, this.bgOrbBuffer);
+                bgOrbGl.bufferData(bgOrbGl.ARRAY_BUFFER, this.bgOrbParticles, bgOrbGl.STATIC_DRAW);
+                bgOrbGl.vertexAttribPointer(this.bgOrbPositionLoc, 3, bgOrbGl.FLOAT, false, 0, 0);
+                bgOrbGl.enableVertexAttribArray(this.bgOrbPositionLoc);
+
+                bgOrbGl.drawArrays(bgOrbGl.POINTS, 0, this.bgOrbParticleCount);
+            }
+
+            createProjectionMatrix(width, height, fov = 60) {
+                const aspect = width / height;
+                const near = 0.1;
+                const far = 1000;
+                const f = 1.0 / Math.tan((fov * Math.PI / 180) / 2);
+                return new Float32Array([
+                    f / aspect, 0, 0, 0,
+                    0, f, 0, 0,
+                    0, 0, (far + near) / (near - far), -1,
+                    0, 0, (2 * far * near) / (near - far), 0
+                ]);
+            }
+
+            createModelViewMatrix() {
+                const cosX = Math.cos(this.mouseX * Math.PI);
+                const sinX = Math.sin(this.mouseX * Math.PI);
+                const cosY = Math.cos(this.mouseY * Math.PI);
+                const sinY = Math.sin(this.mouseY * Math.PI);
+
+                return new Float32Array([
+                    cosY, sinX * sinY, -cosX * sinY, 0,
+                    0, cosX, sinX, 0,
+                    sinY, -sinX * cosY, cosX * cosY, 0,
+                    0, 0, -30, 1
+                ]);
+            }
+
+            render() {
+                const time = performance.now();
+                this.renderBackgroundOrb(time);
+                requestAnimationFrame(() => this.render());
+            }
+        }
+
+        const app = new NutsApp();
+
+        // Tokenomics Chart
+        const tokenomicsCanvas = document.getElementById('tokenomics-chart');
+        const ctx = tokenomicsCanvas.getContext('2d');
+        
+        // Set canvas size
+        tokenomicsCanvas.width = 400;
+        tokenomicsCanvas.height = 400;
+
+        const data = [
+            { label: 'Community Rewards', value: 30, color: '#ffcc00' },
+            { label: 'Team & Development', value: 15, color: '#e07b39' },
+            { label: 'Liquidity Pool', value: 20, color: '#4a3527' },
+            { label: 'Remaining', value: 35, color: '#3d2a21' }
+        ];
+
+        let angle = 0;
+
+        const renderChart = () => {
+            ctx.clearRect(0, 0, 400, 400);
+            let startAngle = angle;
+
+            // Draw 3D pie chart
+            for (let depth = 20; depth >= 0; depth--) {
+                data.forEach(item => {
+                    const sliceAngle = (item.value / 100) * 2 * Math.PI;
+                    const midAngle = startAngle + sliceAngle / 2;
+                    const offsetY = Math.sin(midAngle) * 10 * (depth / 20);
+                    const offsetX = Math.cos(midAngle) * 5 * (depth / 20);
+
+                    ctx.beginPath();
+                    ctx.arc(200 + offsetX, 200 + offsetY + depth, 150, startAngle, startAngle + sliceAngle);
+                    ctx.lineTo(200 + offsetX, 200 + offsetY + depth);
+                    ctx.fillStyle = item.color;
+                    ctx.fill();
+
+                    if (depth === 0) {
+                        ctx.save();
+                        ctx.beginPath();
+                        ctx.arc(200 + offsetX, 200 + offsetY, 150, startAngle, startAngle + sliceAngle);
+                        ctx.lineTo(200 + offsetX, 200 + offsetY);
+                        const gradient = ctx.createRadialGradient(
+                            200 + offsetX, 200 + offsetY, 0,
+                            200 + offsetX, 200 + offsetY, 150
+                        );
+                        gradient.addColorStop(0, 'rgba(255, 255, 255, 0.2)');
+                        gradient.addColorStop(1, 'rgba(0, 0, 0, 0.2)');
+                        ctx.fillStyle = gradient;
+                        ctx.fill();
+                        ctx.restore();
+                    }
+
+                    startAngle += sliceAngle;
+                });
+            }
+
+            angle += 0.002;
+            requestAnimationFrame(renderChart);
+        };
+
+        renderChart();
     </script>
 </body>
 </html>
