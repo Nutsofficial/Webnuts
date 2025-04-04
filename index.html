@@ -5,7 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>صفحه اصلی</title>
     <link href="https://fonts.googleapis.com/css2?family=Chicle&family=Poetsen+One&family=Rubik+Dirt&family=Rubik+Moonrocks&family=Winky+Sans:ital,wght@0,300..900;1,300..900&family=Yrsa:ital,wght@0,300..700;1,300..700&display=swap" rel="stylesheet">
-    <style>
+    <link href="https://fonts.googleapis.com/css2?family=Chicle&family=Poetsen+One&family=Poiret+One&family=Quicksand:wght@300..700&family=Rubik+Dirt&family=Rubik+Moonrocks&family=Winky+Sans:ital,wght@0,300..900;1,300..900&family=Yrsa:ital,wght@0,300..700;1,300..700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Chicle&family=Poetsen+One&family=Poiret+One&family=Quicksand:wght@300..700&family=Rubik+Dirt&family=Rubik+Moonrocks&family=Winky+Sans:ital,wght@0,300..900;1,300..900&family=Yrsa:ital,wght@0,300..700;1,300..700&display=swap" rel="stylesheet">
+   <style>
         * {
             margin: 0;
             padding: 0;
@@ -31,7 +33,7 @@
             display: flex;
             align-items: center;
             justify-content: space-between;
-            padding: 0 20px;
+            padding: 0 10px;
             flex-direction: row-reverse;
         }
 
@@ -101,7 +103,7 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            margin-top: 30px;
+            margin-top: 15px;
             direction: ltr;
             position: relative;
             padding: 0 20px;
@@ -118,7 +120,7 @@
 
         .text-overlay {
             position: absolute;
-            top: 50%;
+            top: 53%;
             left: 55%;
             transform: translate(-50%, -50%);
             text-align: center;
@@ -128,6 +130,7 @@
             font-family: 'Poetsen One', sans-serif;
             padding: 20px;
             box-sizing: border-box;
+            margin-bottom: -200px;
         }
 
         .text-overlay h1 {
@@ -139,7 +142,7 @@
         }
 
         .text-overlay p {
-            font-size: clamp(0.2rem, 1.5vw, 1.5rem);
+            font-size: clamp(0.15rem, 1.2vw, 1.2rem);
             line-height: 1.4;
             text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
             word-wrap: break-word;
@@ -154,6 +157,32 @@
             text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
         }
 
+        .buttons-container {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+        }
+
+        .action-button {
+            width: 400px;
+            height: 120px;
+            border: none;
+            background: none;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+            padding: 0;
+        }
+
+        .action-button img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+
+        .action-button:hover {
+            transform: scale(1.1);
+        }
+
         .nuts-title {
             text-align: center;
             color: #ffcc00;
@@ -161,6 +190,15 @@
             font-size: clamp(2rem, 5vw, 4rem);
             margin: 10px 10px;
             text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+
+        .nuts-subtitle {
+            text-align: center;
+            color: #e07b39;
+            font-family: 'Quicksand';
+            font-size: clamp(1rem, 2.5vw, 2rem);
+            margin: 0 0px 0px;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
         }
 
         /* تنظیمات ریسپانسیو */
@@ -220,6 +258,15 @@
             .text-overlay h2 {
                 font-size: clamp(0.3rem, 1.8vw, 2rem);
             }
+            .buttons-container {
+                display: flex;
+            justify-content: center;
+                gap: 20px;
+            }
+            .action-button {
+                width: 60px;
+                height: 25px;
+            }
         }
 
         @media screen and (max-width: 480px) {
@@ -227,10 +274,10 @@
                 padding: 0 5px;
             }
             .text-overlay {
-                width: 100%;
-                max-width: min(420px,70vw);
-                padding: 8px;
-                top: 55%;
+                width: 70%;
+                max-width: min(400px,80vw);
+                padding: 6px;
+                top: 58%;
                 left: 55%;
             }
             .text-overlay h1 {
@@ -241,6 +288,320 @@
             }
             .text-overlay h2 {
                 font-size: clamp(0.5rem, 2vw, 1.6rem);
+            }
+            .action-button {
+                width: 60px;
+                height: 25px;
+                
+            }
+        }
+
+        .nft-section {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 20px;
+            background-color: #3d2a21;
+            margin-top: -100px;
+            padding: 20px;
+            flex-wrap: wrap;
+            margin-top: -150px;
+        }
+
+        .features-section {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 30px;
+            background-color: #3d2a21;
+            flex-wrap: wrap;
+            margin-top: -200px;
+        }
+
+        .feature-image {
+            width: 550px;
+            height: 550px;
+            object-fit: contain;
+            transition: transform 0.3s ease;
+            position: relative;
+        }
+
+        .snapshot-text-overlay {
+            position: absolute;
+            top: 35%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+            width: 80%;
+            color: white;
+            font-family: 'Poetsen One';
+        }
+
+        .claim-text-overlay {
+            position: absolute;
+            top: 42%;
+            left: 37%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+            width: 80%;
+            max-width: 60%;
+            color: white;
+            font-family: 'Poetsen One';
+        }
+
+        .snapshot-text-overlay h3 {
+            color: #7a3802;
+            font-size: clamp(1.4rem, 2vw, 2.5rem);
+            margin-bottom: 0.5rem;
+        }
+
+        .claim-text-overlay h3 {
+            color: #7a3802;
+            font-size: clamp(1.4rem, 2vw, 2.5rem);
+            margin-bottom: 0.5rem;
+        }
+
+        .snapshot-text-overlay p {
+            font-size: clamp(1.2rem, 1.5vw, 1.5rem);
+            line-height: 1.3;
+        }
+
+        .claim-text-overlay p {
+            font-size: clamp(1.2rem, 1.5vw, 1.5rem);
+            line-height: 1.3;
+            margin-left: 10px;
+        }
+
+        @media screen and (max-width: 1800px) {
+            .feature-image {
+                width: 350px;
+                height: 350px;
+            }
+            .claim-text-overlay {
+                top: 42%;
+                left: 37%;
+                max-width: 65%;
+            }
+            .claim-text-overlay h3 {
+                font-size: clamp(1.2rem, 1.8vw, 2rem);
+            }
+            .claim-text-overlay p {
+                font-size: clamp(1rem, 1.3vw, 1.3rem);
+            }
+        }
+
+        @media screen and (max-width: 1200px) {
+            .features-section {
+                gap: 20px;
+                margin-top: -150px;
+            }
+            .feature-image {
+                width: 250px;
+                height: 250px;
+            }
+            .claim-text-overlay {
+                top: 42%;
+                left: 37%;
+                max-width: 70%;
+            }
+            .claim-text-overlay h3 {
+                font-size: clamp(1rem, 1.5vw, 1.8rem);
+            }
+            .claim-text-overlay p {
+                font-size: clamp(0.8rem, 1.1vw, 1.1rem);
+            }
+        }
+
+        @media screen and (max-width: 900px) {
+            .features-section {
+                gap: 15px;
+                margin-top: -100px;
+            }
+            .feature-image {
+                width: 180px;
+                height: 180px;
+            }
+            .claim-text-overlay {
+                top: 42%;
+                left: 37%;
+                max-width: 75%;
+            }
+            .claim-text-overlay h3 {
+                font-size: clamp(0.8rem, 1.2vw, 1.4rem);
+            }
+            .claim-text-overlay p {
+                font-size: clamp(0.6rem, 0.9vw, 0.9rem);
+            }
+        }
+
+        @media screen and (max-width: 680px) {
+            .features-section {
+                gap: 10px;
+                margin-top: -60px;
+            }
+            .feature-image {
+                width: 110px;
+                height: 110px;
+            }
+            .claim-text-overlay {
+                top: 47%;
+                left: 37%;
+                max-width: 65%;
+            }
+            .claim-text-overlay h3 {
+                font-size: clamp(0.6rem, 1vw, 1.2rem);
+            }
+            .claim-text-overlay p {
+                font-size: clamp(0.3rem, 0.6vw, 0.6rem);
+                margin-left: 5px;
+            }
+        }
+
+        .nft-image {
+            width: 800px;
+            height: 800px;
+            object-fit: contain;
+            transition: transform 0.3s ease;
+            position: relative;
+        }
+
+        
+
+        .nft-text-overlay {
+            position: absolute;
+            top: 42%;
+            left: 65%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+            width: 57%;
+            color: white;
+            font-family: 'Poetsen One';
+        }
+
+        .nft-text-overlay-allowance {
+            position: absolute;
+            top: 38%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+            width: 80%;
+            color: white;
+            font-family: 'Poetsen One';
+        }
+
+        .nft-text-overlay h3, .nft-text-overlay-allowance h3 {
+            color: #ffcc00;
+            font-size: clamp(1.5rem, 2vw, 2.5rem);
+            margin-bottom: 0.5rem;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+
+        .nft-text-overlay p, .nft-text-overlay-allowance p {
+            font-size: clamp(0.8rem, 1.2vw, 1.2rem);
+            line-height: 1.4;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+            font-family: 'Poetsen One';
+        }
+
+        @media screen and (max-width: 1200px) {
+            .nft-section {
+                gap: 15px;
+                padding: 50px;
+            }
+            .nft-image {
+                width: 375px;
+                height: 375px;
+            }
+            .nft-text-overlay h3, .nft-text-overlay-allowance h3 {
+                font-size: clamp(1.1rem, 1.7vw, 1.9rem);
+                margin-bottom: 0.4rem;
+            }
+            .nft-text-overlay p, .nft-text-overlay-allowance p {
+                font-size: clamp(0.6rem, 0.9vw, 0.9rem);
+                line-height: 1.3;
+            }
+        }
+
+        @media screen and (max-width: 900px) {
+            .nft-section {
+                gap: 10px;
+                padding: 30px;
+            }
+            .nft-image {
+                width: 300px;
+                height: 300px;
+            }
+            .nft-text-overlay h3, .nft-text-overlay-allowance h3 {
+                font-size: clamp(1rem, 1.5vw, 1.8rem);
+                margin-bottom: 0.3rem;
+            }
+            .nft-text-overlay p, .nft-text-overlay-allowance p {
+                font-size: clamp(0.5rem, 0.8vw, 0.8rem);
+                line-height: 1.3;
+            }
+        }
+        
+
+        @media screen and (max-width: 680px) {
+            .nft-section {
+                flex-direction: row;
+                gap: 15px;
+                padding: 15px;
+                margin-top: -50px;
+            }
+
+            .nft-image {
+                width: 200px;
+                height: 200px;
+            }
+            .nft-text-overlay h3, .nft-text-overlay-allowance h3 {
+                font-size: clamp(0.8rem, 1.2vw, 1.4rem);
+                margin-bottom: 0.2rem;
+            }
+            .nft-text-overlay p, .nft-text-overlay-allowance p {
+                font-size: clamp(0.5rem, 0.8vw, 0.7rem);
+                line-height: 1.3;
+            }
+        }
+
+        @media screen and (max-width: 480px) {
+            .nft-section {
+                padding: 20px;
+                margin-top: -30px;
+                gap: 10px;
+            }
+            .nft-image {
+                width: 160px;
+                height: 160px;
+            }
+            .nft-text-overlay h3, .nft-text-overlay-allowance h3 {
+                font-size: clamp(0.4rem, 0.7vw, 1rem);
+                margin-bottom: 0.2rem;
+            }
+            .nft-text-overlay p, .nft-text-overlay-allowance p {
+                font-size: clamp(0.28rem, 0.58vw, 0.48rem);
+                line-height: 1;
+                font-family: 'Quicksand';
+            }
+            .snapshot-text-overlay {
+            position: absolute;
+            top: 40%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+            width: 80%;
+            color: white;
+            font-family: 'Poetsen One';
+        }
+            .snapshot-text-overlay h3 {
+                font-size: clamp(0.5rem, 0.8vw, 1rem);
+
+            }
+            .snapshot-text-overlay p {
+                font-size: clamp(0.3rem, 0.6vw, 0.5rem);
+                margin-top: 0px;
             }
         }
     </style>
@@ -265,6 +626,7 @@
     </div>
 
     <h1 class="nuts-title">NUTS</h1>
+    <h2 class="nuts-subtitle">The next Famous P2E game !</h2>
 
     <div class="image-container">
         <img src="https://img12.pixhost.to/images/1350/582565684_about-bg.png" alt="About Background" class="about-bg">
@@ -273,6 +635,51 @@
             <p>Dive into a vibrant universe where Web3 sparks creativity and excitement! Nuts is more than just a token—it's your passport to tipping friends and collecting unique pixel-style NFTs, each with its own captivating story. Our NFTs unlock a community brimming with adventure and rewards. From "OG," honoring our trailblazers, to "Allowance," empowering you to spread the love, every piece is a gateway to an unforgettable experience. Hold at least one OG NFT to access Nutsverse, our thrilling play-to-earn (P2E) game!</p>
             <h2>How to Participate?</h2>
             <p>Join the Nuts community by grabbing an OG NFT or an Allowance NFT. These are your keys to unlocking exclusive perks, tipping privileges, and immersive gameplay. Ready to jump in? It's as simple as owning one of these NFTs!</p>
+            <div class="buttons-container">
+                <button class="action-button">
+                    <img src="https://img12.pixhost.to/images/1351/582582930_og-button.png" alt="OG Button">
+                </button>
+                <button class="action-button">
+                    <img src="https://img12.pixhost.to/images/1351/582584740_allowance-button.png" alt="Allowance Button">
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <div class="nft-section">
+        <div style="position: relative;">
+            <img src="https://img12.pixhost.to/images/1405/583319194_nft_allowance.png" alt="Allowance NFT" class="nft-image">
+            <div class="nft-text-overlay-allowance">
+                <h3>? What is Allowance NFT</h3>
+                <p>The Allowance NFT is your ticket to steady rewards! Each one grants you 30 daily 🥜 allowance and remains valid across all future seasons. It's the perfect way to stay active in the Nuts ecosystem and keep the fun going</p>
+            </div>
+        </div>
+        <div style="position: relative;">
+            <img src="https://img12.pixhost.to/images/1405/583318997_og_nft.png" alt="OG NFT" class="nft-image">
+            <div class="nft-text-overlay">
+                <h3>? What is OG </h3>
+                <p>OG NFTs are for the pioneers of Nuts! By minting an OG, you'll unlock 150 daily 🥜 allowance, a hefty 25k $NUTS token drop, and early access to Nutsverse, our P2E game. Your allowance kick in automatically 24 hours after minting—just ensure your OG NFT is in your connected Farcaster wallet</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="features-section">
+        <img src="https://img12.pixhost.to/images/1373/582832400_tip.png" alt="Tipping" class="feature-image">
+        <div style="position: relative;">
+            <img src="https://img12.pixhost.to/images/1373/582833792_claim.png" alt="Claim" class="feature-image">
+            <div class="claim-text-overlay">
+                <h3>Claim</h3>
+                <p>? When is Claim🔸<br>
+                We're currently in Season 1 Mark your calendars claiming opens on May 20  Get ready to collect your rewards</p>
+            </div>
+        </div>
+        <div style="position: relative;">
+            <img src="https://img12.pixhost.to/images/1373/582833950_snapshot.png" alt="Snapshot" class="feature-image">
+            <div class="snapshot-text-overlay">
+                <h3>Snapshot</h3>
+                <p>? When is Snapshot🔸<br>
+                The snapshot for Season 1 happens on May 15   Make sure you're holding your NFTs by then to secure your spot</p>
+            </div>
         </div>
     </div>
 
