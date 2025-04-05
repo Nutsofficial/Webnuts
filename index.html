@@ -127,11 +127,14 @@
             direction: ltr;
             position: relative;
             padding: 0 20px;
+            max-width: 1400px;
+            margin-left: auto;
+            margin-right: auto;
         }
 
         .about-bg {
             width: 100%;
-            max-width: 1400px;
+            max-width: 100%;
             height: auto;
             display: block;
             margin: 0 auto;
@@ -140,29 +143,28 @@
 
         .text-overlay {
             position: absolute;
-            top: 53%;
-            left: 55%;
+            top: 50%;
+            left: 50%;
             transform: translate(-50%, -50%);
             text-align: center;
-            width: 80%;
-            max-width: min(1100px, 80vw);         
+            width: 90%;
+            max-width: 1200px;         
             color: white;
             font-family: 'Poetsen One', sans-serif;
             padding: 20px;
             box-sizing: border-box;
-            margin-bottom: -200px;
         }
 
         .text-overlay h1 {
             color: #ffcc00;
-            font-size: clamp(0.2rem, 2vw, 3rem);
+            font-size: clamp(1.5rem, 3vw, 3rem);
             margin-bottom: clamp(8px, 1.5vw, 12px);
             text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
             word-wrap: break-word;
         }
 
         .text-overlay p {
-            font-size: clamp(0.15rem, 1.2vw, 1.2rem);
+            font-size: clamp(0.8rem, 1.5vw, 1.2rem);
             line-height: 1.4;
             text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
             word-wrap: break-word;
@@ -172,7 +174,7 @@
 
         .text-overlay h2 {
             color: #ffcc00;
-            font-size: clamp(0.2rem, 2vw, 2.5rem);
+            font-size: clamp(1.2rem, 2.5vw, 2.5rem);
             margin-bottom: clamp(6px, 1vw, 8px);
             text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
         }
@@ -184,11 +186,13 @@
             width: 100%;
             position: relative;
             z-index: 10;
+            max-width: 1000px;
+            margin: 0 auto;
         }
 
         .action-button {
-            width: 400px;
-            height: 120px;
+            width: clamp(200px, 30vw, 400px);
+            height: clamp(60px, 15vw, 120px);
             border: none;
             background: none;
             cursor: pointer;
@@ -330,6 +334,8 @@
 
         .nft-section {
             width: 100%;
+            max-width: 1600px;
+            margin: 0 auto;
             display: flex;
             justify-content: center;
             align-items: center;
@@ -339,11 +345,12 @@
             flex-wrap: wrap;
             margin-top: 10px;
             z-index: 1;
-
         }
 
         .features-section {
             width: 100%;
+            max-width: 1800px;
+            margin: 0 auto;
             display: flex;
             justify-content: center;
             align-items: center;
@@ -354,8 +361,8 @@
         }
 
         .feature-image {
-            width: 550px;
-            height: 550px;
+            width: clamp(200px, 30vw, 550px);
+            height: clamp(200px, 30vw, 550px);
             object-fit: contain;
             transition: transform 0.3s ease;
             position: relative;
@@ -497,9 +504,9 @@
         }
 
         .nft-image {
-            width: 750px;
-            height: 375px;
-            object-fit:scale-down;
+            width: clamp(300px, 40vw, 750px);
+            height: clamp(300px, 40vw, 375px);
+            object-fit: contain;
             transition: transform 0.3s ease;
             position: relative;
         }
@@ -703,14 +710,15 @@
         }
 
         .tokenomics-section {
+            width: 100%;
+            max-width: 1400px;
+            margin: 40px auto;
             padding: 50px 20px;
             background: rgba(30, 20, 15, 0.5);
-            margin: 40px 0;
             border-radius: 15px;
             box-shadow: 0 0 20px rgba(255, 204, 0, 0.2);
             backdrop-filter: blur(10px);
             -webkit-backdrop-filter: blur(10px);
-            width: 100%;
             box-sizing: border-box;
         }
 
