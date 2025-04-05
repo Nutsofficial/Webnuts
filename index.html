@@ -12,6 +12,7 @@
             margin: 0;
             padding: 0;
             box-sizing: border-box;
+            scroll-behavior: smooth;
         }
         
         body {
@@ -337,7 +338,7 @@
             margin-top: -100px;
             padding: 20px;
             flex-wrap: wrap;
-            margin-top: -150px;
+            margin-top: 10px;
             z-index: 1;
 
         }
@@ -350,7 +351,7 @@
             gap: 30px;
             background-color: #3d2a21;
             flex-wrap: wrap;
-            margin-top: -200px;
+            margin-top: -10px;
         }
 
         .feature-image {
@@ -497,8 +498,8 @@
         }
 
         .nft-image {
-            width: 800px;
-            height: 800px;
+            width: 750px;
+            height: 375px;
             object-fit:scale-down;
             transition: transform 0.3s ease;
             position: relative;
@@ -508,8 +509,8 @@
 
         .nft-text-overlay {
             position: absolute;
-            top: 42%;
-            left: 65%;
+            top: 36%;
+            left: 63%;
             transform: translate(-50%, -50%);
             text-align: center;
             padding: 0px;
@@ -522,7 +523,7 @@
 
         .nft-text-overlay-allowance {
             position: absolute;
-            top: 38%;
+            top: 30%;
             left: 50%;
             padding: 0;
             transform: translate(-50%, -50%);
@@ -542,7 +543,7 @@
         }
 
         .nft-text-overlay p, .nft-text-overlay-allowance p {
-            font-size: clamp(0.8rem, 1.2vw, 1.2rem);
+            font-size: clamp(0.6rem, 1vw, 1rem);
             line-height: 1.4;
             text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
             font-family: 'Poetsen One';
@@ -551,7 +552,8 @@
         @media screen and (max-width: 1200px) {
             .nft-section {
                 gap: 15px;
-                padding: 50px;
+                padding: 60px;
+                margin-top: -110px;
             }
             .nft-image {
                 width: 375px;
@@ -560,6 +562,7 @@
             .nft-text-overlay h3, .nft-text-overlay-allowance h3 {
                 font-size: clamp(1.1rem, 1.7vw, 1.9rem);
                 margin-bottom: 0.4rem;
+                margin-top: 50px;
             }
             .nft-text-overlay p, .nft-text-overlay-allowance p {
                 font-size: clamp(0.6rem, 0.9vw, 0.9rem);
@@ -602,6 +605,7 @@
             .nft-text-overlay h3, .nft-text-overlay-allowance h3 {
                 font-size: clamp(0.8rem, 1.2vw, 1.4rem);
                 margin-bottom: 0.2rem;
+                
             }
             .nft-text-overlay p, .nft-text-overlay-allowance p {
                 font-size: clamp(0.5rem, 0.8vw, 0.7rem);
@@ -620,7 +624,8 @@
                 height: 160px;
             }
             .nft-text-overlay h3, .nft-text-overlay-allowance h3 {
-                font-size: clamp(0.4rem, 0.7vw, 1rem);
+                font-size: clamp(0.3rem, 0.6vw, 0.9rem);
+                margin-top: 20px;
                 margin-bottom: 0.2rem;
             }
             .nft-text-overlay p, .nft-text-overlay-allowance p {
@@ -997,11 +1002,12 @@
         <div class="nav-links">
             <span class="coming-soon">Coming soon ...</span>
             <a href="#" class="connect-wallet">Connect Wallet</a>
-            <a href="#">Home</a>
-            <a href="#">Tipping</a>
-            <a href="#">Claim</a>
-            <a href="#">Snapshot</a>
-            <a href="#">Tokenomics</a>
+            
+            <a href="#tipping">Tipping</a>
+            <a href="#claim">Claim</a>
+            <a href="#snapshot">Snapshot</a>
+            <a href="#tokenomics">Tokenomics</a>
+            <a href="#" id="home-link">Home</a>
         </div>
     </div>
 
@@ -1044,7 +1050,7 @@
     </div>
 
     <div class="features-section">
-        <div style="position: relative;">
+        <div id="tipping" style="position: relative;">
             <img src="https://img12.pixhost.to/images/1373/582832400_tip.png" alt="Tipping" class="feature-image">
             <div class="tipping-text-overlay">
                 <h3>Tipping</h3>
@@ -1053,7 +1059,7 @@
                  *(Number)x🥜*  It's a simple, fun way to share the wealth and strengthen our community</p>
             </div>
         </div>
-        <div style="position: relative;">
+        <div id="claim" style="position: relative;">
             <img src="https://img12.pixhost.to/images/1373/582833792_claim.png" alt="Claim" class="feature-image">
             <div class="claim-text-overlay">
                 <h3>Claim</h3>
@@ -1061,7 +1067,7 @@
                 We're currently in Season 1 Mark your calendars claiming opens on May 20  Get ready to collect your rewards</p>
             </div>
         </div>
-        <div style="position: relative;">
+        <div id="snapshot" style="position: relative;">
             <img src="https://img12.pixhost.to/images/1373/582833950_snapshot.png" alt="Snapshot" class="feature-image">
             <div class="snapshot-text-overlay">
                 <h3>Snapshot</h3>
@@ -1072,7 +1078,7 @@
     </div>
 
     <!-- Tokenomics Section -->
-    <section class="tokenomics-section">
+    <section id="tokenomics" class="tokenomics-section">
         <div class="tokenomics-title">
             <h2>TOKENOMICS</h2>
         </div>
@@ -1105,10 +1111,41 @@
     <script>
         const hamburger = document.querySelector('.hamburger');
         const navLinks = document.querySelector('.nav-links');
+        const homeLink = document.getElementById('home-link');
         
         hamburger.addEventListener('click', () => {
             navLinks.classList.toggle('active');
             hamburger.classList.toggle('active');
+        });
+
+        homeLink.addEventListener('click', (e) => {
+            e.preventDefault();
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+
+        // Add smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    targetElement.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                    // Close mobile menu if open
+                    if (navLinks.classList.contains('active')) {
+                        navLinks.classList.remove('active');
+                        hamburger.classList.remove('active');
+                    }
+                }
+            });
         });
 
         class NutsApp {
