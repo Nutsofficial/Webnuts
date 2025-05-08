@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title> WebNuts </title>
+    <title> Webnuts </title>
     <link href="https://fonts.googleapis.com/css2?family=Chicle&family=Poetsen+One&family=Rubik+Dirt&family=Rubik+Moonrocks&family=Winky+Sans:ital,wght@0,300..900;1,300..900&family=Yrsa:ital,wght@0,300..700;1,300..700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Chicle&family=Poetsen+One&family=Poiret+One&family=Quicksand:wght@300..700&family=Rubik+Dirt&family=Rubik+Moonrocks&family=Winky+Sans:ital,wght@0,300..900;1,300..900&family=Yrsa:ital,wght@0,300..700;1,300..700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Chicle&family=Poetsen+One&family=Poiret+One&family=Quicksand:wght@300..700&family=Rubik+Dirt&family=Rubik+Moonrocks&family=Winky+Sans:ital,wght@0,300..900;1,300..900&family=Yrsa:ital,wght@0,300..700;1,300..700&display=swap" rel="stylesheet">
@@ -127,11 +127,14 @@
             direction: ltr;
             position: relative;
             padding: 0 20px;
+            max-width: 1400px;
+            margin-left: auto;
+            margin-right: auto;
         }
 
         .about-bg {
             width: 100%;
-            max-width: 1400px;
+            max-width: 100%;
             height: auto;
             display: block;
             margin: 0 auto;
@@ -140,29 +143,28 @@
 
         .text-overlay {
             position: absolute;
-            top: 53%;
+            top: 60%;
             left: 55%;
             transform: translate(-50%, -50%);
             text-align: center;
-            width: 80%;
-            max-width: min(1100px, 80vw);         
+            width: 70%;
+            max-width: 1200px;         
             color: white;
             font-family: 'Poetsen One', sans-serif;
             padding: 20px;
             box-sizing: border-box;
-            margin-bottom: -200px;
         }
 
         .text-overlay h1 {
             color: #ffcc00;
-            font-size: clamp(0.2rem, 2vw, 3rem);
+            font-size: clamp(1.5rem, 3vw, 3rem);
             margin-bottom: clamp(8px, 1.5vw, 12px);
             text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
             word-wrap: break-word;
         }
 
         .text-overlay p {
-            font-size: clamp(0.15rem, 1.2vw, 1.2rem);
+            font-size: clamp(0.8rem, 1.5vw, 1.2rem);
             line-height: 1.4;
             text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
             word-wrap: break-word;
@@ -172,7 +174,7 @@
 
         .text-overlay h2 {
             color: #ffcc00;
-            font-size: clamp(0.2rem, 2vw, 2.5rem);
+            font-size: clamp(1.2rem, 2.5vw, 2.5rem);
             margin-bottom: clamp(6px, 1vw, 8px);
             text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
         }
@@ -184,11 +186,13 @@
             width: 100%;
             position: relative;
             z-index: 10;
+            max-width: 1000px;
+            margin: 0 auto;
         }
 
         .action-button {
-            width: 400px;
-            height: 120px;
+            width: clamp(200px, 30vw, 400px);
+            height: clamp(60px, 15vw, 120px);
             border: none;
             background: none;
             cursor: pointer;
@@ -330,6 +334,8 @@
 
         .nft-section {
             width: 100%;
+            max-width: 1600px;
+            margin: 0 auto;
             display: flex;
             justify-content: center;
             align-items: center;
@@ -337,13 +343,14 @@
             background-color: #3d2a21;
             padding: 20px;
             flex-wrap: wrap;
-            margin-top: 10px;
-            z-index: 1;
-
+            margin-top: 45px;
+            z-index:0;
         }
 
         .features-section {
             width: 100%;
+            max-width: 1800px;
+            margin: 0 auto;
             display: flex;
             justify-content: center;
             align-items: center;
@@ -354,8 +361,8 @@
         }
 
         .feature-image {
-            width: 550px;
-            height: 550px;
+            width: clamp(200px, 30vw, 550px);
+            height: clamp(200px, 30vw, 550px);
             object-fit: contain;
             transition: transform 0.3s ease;
             position: relative;
@@ -398,14 +405,14 @@
 
         .snapshot-text-overlay p {
             color: #c55a02;
-            font-size: clamp(0.7rem, 1.5vw, 1.5rem);
+            font-size: clamp(0.5rem, 1.2vw, 1.2rem);
             line-height: 1.3;
             margin-top: 10px;
         }
 
         .claim-text-overlay p {
             color: #c55a02;
-            font-size: clamp(1.2rem, 1.5vw, 1.5rem);
+            font-size: clamp(0.5rem, 1.2vw, 1.2rem);
             line-height: 1.3;
             margin-left: 10px;
             margin-top: 10px;
@@ -419,13 +426,13 @@
             .claim-text-overlay {
                 top: 42%;
                 left: 37%;
-                max-width: 65%;
+                max-width: 62%;
             }
             .claim-text-overlay h3 {
                 font-size: clamp(1.2rem, 1.8vw, 2rem);
             }
             .claim-text-overlay p {
-                font-size: clamp(1rem, 1.3vw, 1.3rem);
+                font-size: clamp(0.8rem, 1.1vw, 1.1rem);
             }
         }
 
@@ -447,7 +454,7 @@
                 font-size: clamp(1.2rem, 2.2vw, 2rem);
             }
             .claim-text-overlay p {
-                font-size: clamp(0.8rem, 1.1vw, 1.1rem);
+                font-size: clamp(0.6rem, 0.9vw, 0.9rem);
             }
         }
 
@@ -497,9 +504,9 @@
         }
 
         .nft-image {
-            width: 750px;
-            height: 375px;
-            object-fit:scale-down;
+            width: clamp(300px, 40vw, 750px);
+            height: clamp(300px, 40vw, 375px);
+            object-fit: contain;
             transition: transform 0.3s ease;
             position: relative;
         }
@@ -535,7 +542,7 @@
         }
 
         .nft-text-overlay h3, .nft-text-overlay-allowance h3 {
-            color: #ffcc00;
+            color: #ffffff;
             font-size: clamp(1.5rem, 2vw, 2.5rem);
             margin-bottom: 0.5rem;
             text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
@@ -659,58 +666,42 @@
             left: 63%;
             transform: translate(-50%, -50%);
             text-align: center;
-            width: 90%;
-            max-width:65%;
+            width: 80%;
+            max-width: 55%;
             color: #c55a02;
             font-family: 'Poetsen One';
         }
 
         .tipping-text-overlay h3 {
             color: #623101;
-            font-size: clamp(1.4rem, 2vw, 2.5rem);
+            font-size: clamp(1.8rem, 2.4vw, 3rem);
             margin-bottom: 0.5rem;
         }
 
         .tipping-text-overlay p {
-
-            font-size: clamp(0.6rem, 1vw, 1rem);
+            font-size: clamp(0.8rem, 1.2vw, 1.2rem);
             line-height: 1.3;
             margin-left: 10px;
         }
 
-
         @media screen and (max-width: 680px) {
-            .features-section {
-                gap: 10px;
-                margin-top: -60px;
-            }
-            .feature-image {
-                width: 110px;
-                height: 110px;
-            }
             .tipping-text-overlay {
                 top: 49%;
                 left: 60%;
-                max-width: 55%;
-            }
-            .tipping-text-overlay h3 {
-                font-size: clamp(0.6rem, 1vw, 1rem);
-            }
-            .tipping-text-overlay p {
-                font-size: clamp(0.25rem, 0.55vw, 0.55rem);
-                margin-left: 5px;
+                max-width: 50%;
             }
         }
 
         .tokenomics-section {
+            width: 100%;
+            max-width: 1400px;
+            margin: 40px auto;
             padding: 50px 20px;
             background: rgba(30, 20, 15, 0.5);
-            margin: 40px 0;
             border-radius: 15px;
             box-shadow: 0 0 20px rgba(255, 204, 0, 0.2);
             backdrop-filter: blur(10px);
             -webkit-backdrop-filter: blur(10px);
-            width: 100%;
             box-sizing: border-box;
         }
 
@@ -1085,10 +1076,12 @@
             <div class="tokenomics-distribution">
                 <h3>Token Distribution</h3>
                 <ul>
-                    <li>Community Rewards: 30%</li>
-                    <li>Team & Development: 15%</li>
-                    <li>Liquidity Pool: 20%</li>
                     <li>Remaining: 35%</li>
+                    <li>Community Rewards: 30%</li>
+                    <li>Liquidity Pool: 20%</li>
+                    <li>Team & Development: 15%</li>
+                    
+                    
                 </ul>
             </div>
             <div class="tokenomics-chart">
