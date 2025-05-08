@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Webnuts - RoadMap</title>
+    <link rel="icon" type="image/png" href="Images/icon.png">
+    <link href="https://fonts.googleapis.com/css2?family=Chicle&family=Poetsen+One&family=Rubik+Dirt&family=Rubik+Moonrocks&family=Winky+Sans:ital,wght@0,300..900;1,300..900&family=Yrsa:ital,wght@0,300..700;1,300..700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+        
+        body {
+            background-color: #3d2a21;
+            min-height: 100vh;
+            font-family: Arial, sans-serif;
+            padding-top: 60px;
+            position: relative;
+            overflow-x: hidden;
+            background-image: 
+                radial-gradient(circle at 25px 25px, rgba(255, 204, 0, 0.1) 2%, transparent 0%),
+                radial-gradient(circle at 75px 75px, rgba(255, 204, 0, 0.1) 2%, transparent 0%);
+            background-size: 100px 100px;
+        }
+
+        .top-bar {
+            position: relative;
+            z-index: 1000;
+            width: 100%;
+            height: 70px;
+            background-color: #533525;
+            border-bottom: 3px solid #ffcc00;
+            position: fixed;
+            top: 0;
+            left: 0;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 10px;
+            flex-direction: row-reverse;
+        }
+
+        .logo {
+            height: 60px;
+            width: auto;
+        }
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 30px;
+        }
+
+        .nav-links a {
+            color: #ffcc00;
+            text-decoration: none;
+            font-size: 16px;
+            transition: all 0.3s ease;
+            font-family: 'Poetsen One', sans-serif;
+        }
+
+        .nav-links a:hover {
+            color: #e07b39;
+            transform: scale(1.1);
+        }
+
+        .roadmap-section {
+            width: 100%;
+            max-width: 1200px;
+            margin: 40px auto;
+            padding: 50px 20px;
+            background: rgba(30, 20, 15, 0.5);
+            border-radius: 15px;
+            box-shadow: 0 0 20px rgba(255, 204, 0, 0.2);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+        }
+
+        .roadmap-title {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .roadmap-title h2 {
+            color: #ffcc00;
+            font-family: 'Poetsen One';
+            font-size: clamp(24px, 4vw, 36px);
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+            letter-spacing: 2px;
+        }
+
+        .roadmap-container {
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+            align-items: center;
+            text-align: center;
+        }
+
+        .roadmap-content {
+            display: flex;
+            flex-direction: row-reverse;
+            align-items: center;
+            gap: 40px;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .roadmap-image {
+            width: 45%;
+            max-width: 500px;
+            height: auto;
+            border-radius: 15px;
+            box-shadow: 0 0 20px rgba(255, 204, 0, 0.3);
+        }
+
+        .roadmap-text {
+            width: 55%;
+            color: #ffffff;
+            font-family: 'Poetsen One', sans-serif;
+            font-size: clamp(18px, 2.2vw, 24px);
+            line-height: 1.8;
+            text-align: left;
+        }
+
+        .roadmap-text span {
+            color: #ffcc00;
+            font-weight: bold;
+        }
+
+        .roadmap-text .highlight {
+            color: #e07b39;
+            font-weight: bold;
+        }
+
+        .roadmap-text .emoji {
+            font-size: 1.2em;
+            margin-right: 5px;
+        }
+
+        .roadmap-item {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 10px;
+            padding: 20px;
+            transition: all 0.3s ease;
+        }
+
+        .roadmap-item:hover {
+            transform: translateX(10px);
+            background: rgba(255, 204, 0, 0.1);
+        }
+
+        .roadmap-item h3 {
+            color: #ffcc00;
+            font-family: 'Poetsen One';
+            font-size: clamp(18px, 2.5vw, 24px);
+            margin-bottom: 15px;
+        }
+
+        .roadmap-item p {
+            color: #ffffff;
+            font-family: 'Winky Sans';
+            font-size: clamp(14px, 1.8vw, 16px);
+            line-height: 1.6;
+        }
+
+        @media screen and (max-width: 768px) {
+            .roadmap-section {
+                padding: 30px 15px;
+                margin: 20px 10px;
+            }
+
+            .roadmap-content {
+                flex-direction: column;
+                padding: 0 15px;
+                gap: 30px;
+            }
+            
+            .roadmap-image {
+                width: 90%;
+            }
+
+            .roadmap-text {
+                width: 100%;
+                text-align: left;
+            }
+        }
+
+        @media screen and (max-width: 480px) {
+            .roadmap-section {
+                padding: 20px 10px;
+                margin: 15px 5px;
+            }
+
+            .roadmap-content {
+                padding: 0 10px;
+                gap: 20px;
+            }
+            
+            .roadmap-image {
+                width: 95%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="top-bar">
+        <img src="Images/Wlc.png" alt="لوگو" class="logo">
+        <div class="nav-links">
+            <a href="Index.html" class="connect-wallet">Home</a>
+        </div>
+    </div>
+
+    <section class="roadmap-section">
+        <div class="roadmap-title">
+            <h2>ROADMAP</h2>
+        </div>
+        <div class="roadmap-container">
+            <div class="roadmap-content">
+                <img src="Images/0.png" alt="Roadmap Image" class="roadmap-image">
+                <p class="roadmap-text">
+                    <span class="emoji">🥜</span> Nuts Project Roadmap<br><br>
+                    <span>Token:</span> Nuts<br>
+                    <span>Utility:</span> Tipping token on Farcaster + in-game currency<br>
+                    <span>Blockchain:</span> Ethereum (Base network)<br>
+                    <span>Target Audience:</span> Farcaster users<br>
+                    <span>Duration:</span> 1 year (April 30, 2025 – April 30, 2026)
+                </p>
+            </div>
+
+            <div class="roadmap-item">
+                <div class="roadmap-content">
+                    <img src="Images/11.png" alt="Phase 1" class="roadmap-image">
+                    <div class="roadmap-text">
+                        <h3>Phase 1: Initial Launch (Apr 30 – Jun 29, 2025) 🔹</h3>
+                        <p>
+                            <span class="highlight">Goal:</span> Introduce Nuts, launch tools, deploy token 🎯<br><br>
+                            <span class="highlight">Completed:</span><br>
+                            Project Vision (Tipping + Game) •<br>
+                            Smart Contract Testing •<br><br>
+                            <span class="highlight">Upcoming:</span><br>
+                            May 3: Whitepaper Release •<br>
+                            May 7: Mini-App Launch (Tipping Starts!) •<br>
+                            June 14: AI Agent Launch •<br>
+                            June 29: Token Launch on Base •<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;→ Season 1 Airdrop: 26.25M tokens (5.25%)<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;→ NFT Bonus: For OG & Allowance holders
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="roadmap-item">
+                <div class="roadmap-content">
+                    <img src="Images/12.png" alt="Phase 2" class="roadmap-image">
+                    <div class="roadmap-text">
+                        <h3>Phase 2: Pre-Launch & Token Offering (Jun 30 – Sep 30, 2025)</h3>
+                        <p>
+                            <span class="highlight">Goal:</span> Raise funds, build liquidity, prep the game 🎯<br><br>
+                            <span class="highlight">July:</span> 🟨<br>
+                            Presale: 75M tokens (15%) @ $0.03 → $2.25M •<br>
+                            Staking Program Launch •<br><br>
+                            <span class="highlight">August:</span> 🟩<br>
+                            Game Beta Test (early access) •<br>
+                            OG & Allowance NFT Bonuses •<br><br>
+                            <span class="highlight">September:</span> 🟦<br>
+                            Uniswap Listing (75M tokens) •<br>
+                            Liquidity Rewards: 50M tokens (10%) •<br>
+                            Season 2 Airdrop: 21M tokens (4.2%) •
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="roadmap-item">
+                <div class="roadmap-content">
+                    <img src="Images/13.png" alt="Phase 3" class="roadmap-image">
+                    <div class="roadmap-text">
+                        <h3>Phase 3: Game Launch & Expansion (Oct 1 – Dec 31, 2025)</h3>
+                        <p>
+                            <span class="highlight">Goal:</span> Launch game, grow user base, form partnerships 🎯<br><br>
+                            <span class="highlight">Aug 28:</span> 🕹<br>
+                            Game Launch •<br>
+                            In-Game Tipping & Item Upgrades •<br>
+                            Treasury Rewards: 100M tokens (20%) •<br><br>
+                            <span class="highlight">October:</span> 📢<br>
+                            Marketing Campaign with Web3 influencers •<br>
+                            Season 3 Airdrop: 17.5M tokens (3.5%) •<br>
+                            NFT Bonuses •<br><br>
+                            <span class="highlight">November:</span> 🤝<br>
+                            Strategic Web3 Partnerships •<br>
+                            PvP Mode & Group Missions •<br><br>
+                            <span class="highlight">December:</span> 🏆<br>
+                            Season 4 Airdrop: 15.75M tokens (3.15%) •<br>
+                            Major Tournament (with token prizes) •
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="roadmap-item">
+                <div class="roadmap-content">
+                    <img src="Images/14.png" alt="Phase 4" class="roadmap-image">
+                    <div class="roadmap-text">
+                        <h3>Phase 4: Sustainability & Scalability (Jan 1 – Apr 30, 2026)</h3>
+                        <p>
+                            <span class="highlight">Goal:</span> Expand ecosystem, decentralize, finalize airdrops 🎯<br><br>
+                            <span class="highlight">January:</span> 🧩<br>
+                            Game Expansion (NFT collectibles) •<br>
+                            Season 5 Airdrop: 14M tokens (2.8%) •<br>
+                            NFT Bonuses •<br><br>
+                            <span class="highlight">February:</span> 🗳<br>
+                            DAO Launch – Community Treasury Governance •<br>
+                            Season 6 Airdrop: 12.25M tokens (2.45%) •<br><br>
+                            <span class="highlight">March:</span> 📈<br>
+                            Centralized Exchange Listing (Coinbase/KuCoin) •<br>
+                            Season 7 Airdrop: 10.5M tokens (2.1%) •<br><br>
+                            <span class="highlight">April:</span> 💝<br>
+                            Web3 Charity Initiative •<br>
+                            Season 8 Airdrop: 8.75M tokens (1.75%) •<br>
+                            Prep for Season 9 (7M tokens, beyond roadmap) •
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer style="
+        background-color: #533525;
+        color: #ffcc00;
+        text-align: center;
+        padding: 20px;
+        margin-top: 50px;
+        border-top: 3px solid #ffcc00;
+        font-family: 'Poetsen One', sans-serif;
+    ">
+        <p>2025Nuts - All Rights Reserved©</p>
+        <p>created by arsalang.eth & jeyloo.eth</p>
+    </footer>
+</body>
+</html> 

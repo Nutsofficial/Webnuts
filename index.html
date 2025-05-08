@@ -361,8 +361,8 @@
         }
 
         .feature-image {
-            width: clamp(200px, 30vw, 550px);
-            height: clamp(200px, 30vw, 550px);
+            width: clamp(300px, 40vw, 650px);
+            height: clamp(300px, 40vw, 650px);
             object-fit: contain;
             transition: transform 0.3s ease;
             position: relative;
@@ -420,8 +420,8 @@
 
         @media screen and (max-width: 1800px) {
             .feature-image {
-                width: 350px;
-                height: 350px;
+                width: 450px;
+                height: 450px;
             }
             .claim-text-overlay {
                 top: 42%;
@@ -442,8 +442,8 @@
                 margin-top: -150px;
             }
             .feature-image {
-                width: 250px;
-                height: 250px;
+                width: 350px;
+                height: 350px;
             }
             .claim-text-overlay {
                 top: 42%;
@@ -464,8 +464,8 @@
                 margin-top: -100px;
             }
             .feature-image {
-                width: 180px;
-                height: 180px;
+                width: 250px;
+                height: 250px;
             }
             .claim-text-overlay {
                 top: 42%;
@@ -486,8 +486,8 @@
                 margin-top: -60px;
             }
             .feature-image {
-                width: 110px;
-                height: 110px;
+                width: 150px;
+                height: 150px;
             }
             .claim-text-overlay {
                 top: 47%;
@@ -500,6 +500,34 @@
             .claim-text-overlay p {
                 font-size: clamp(0.3rem, 0.6vw, 0.6rem);
                 margin-left: 5px;
+            }
+        }
+
+        @media screen and (max-width: 480px) {
+            .feature-image {
+                width: 120px;
+                height: 120px;
+            }
+            .text-overlay {
+                width: 70%;
+                max-width: min(400px,80vw);
+                padding: 6px;
+                top: 58%;
+                left: 55%;
+            }
+            .text-overlay h1 {
+                font-size: clamp(0.5rem, 2vw, 1.6rem);
+            }
+            .text-overlay p {
+                font-size: clamp(0.3rem, 1.5vw, 0.6rem);
+            }
+            .text-overlay h2 {
+                font-size: clamp(0.5rem, 2vw, 1.6rem);
+            }
+            .action-button {
+                width: 60px;
+                height: 25px;
+                
             }
         }
 
@@ -662,33 +690,84 @@
 
         .tipping-text-overlay {
             position: absolute;
-            top: 47%;
-            left: 63%;
+            top: 42%;
+            left: 60%;
             transform: translate(-50%, -50%);
             text-align: center;
             width: 80%;
-            max-width: 55%;
-            color: #c55a02;
+            max-width: 60%;
+            color: white;
             font-family: 'Poetsen One';
         }
 
         .tipping-text-overlay h3 {
             color: #623101;
-            font-size: clamp(1.8rem, 2.4vw, 3rem);
+            font-size: clamp(1.4rem, 2vw, 2.5rem);
             margin-bottom: 0.5rem;
         }
 
         .tipping-text-overlay p {
-            font-size: clamp(0.8rem, 1.2vw, 1.2rem);
+            color: #c55a02;
+            font-size: clamp(0.5rem, 1.2vw, 1.2rem);
             line-height: 1.3;
             margin-left: 10px;
+            margin-top: 10px;
+        }
+
+        @media screen and (max-width: 1800px) {
+            .tipping-text-overlay {
+                top: 42%;
+                left: 60%;
+                max-width: 62%;
+            }
+            .tipping-text-overlay h3 {
+                font-size: clamp(1.2rem, 1.8vw, 2rem);
+            }
+            .tipping-text-overlay p {
+                font-size: clamp(0.8rem, 1.1vw, 1.1rem);
+            }
+        }
+
+        @media screen and (max-width: 1200px) {
+            .tipping-text-overlay {
+                top: 42%;
+                left: 60%;
+                max-width: 70%;
+            }
+            .tipping-text-overlay h3 {
+                font-size: clamp(1.2rem, 2.2vw, 2rem);
+            }
+            .tipping-text-overlay p {
+                font-size: clamp(0.6rem, 0.9vw, 0.9rem);
+            }
+        }
+
+        @media screen and (max-width: 900px) {
+            .tipping-text-overlay {
+                top: 42%;
+                left: 60%;
+                max-width: 75%;
+            }
+            .tipping-text-overlay h3 {
+                font-size: clamp(0.8rem, 1.2vw, 1.4rem);
+            }
+            .tipping-text-overlay p {
+                font-size: clamp(0.6rem, 0.9vw, 0.9rem);
+            }
         }
 
         @media screen and (max-width: 680px) {
             .tipping-text-overlay {
-                top: 49%;
+                top: 47%;
                 left: 60%;
-                max-width: 50%;
+                max-width: 65%;
+            }
+            .tipping-text-overlay h3 {
+                font-size: clamp(0.6rem, 1vw, 1.2rem);
+            }
+            .tipping-text-overlay p {
+                font-size: clamp(0.3rem, 0.6vw, 0.6rem);
+                margin-left: 5px;
             }
         }
 
@@ -990,9 +1069,7 @@
             <span></span>
         </div>
         <div class="nav-links">
-            <span class="coming-soon">Coming soon ...</span>
-            <a href="#" class="connect-wallet">Connect Wallet</a>
-            
+            <a href="RoadMap.html" class="connect-wallet">RoadMap</a>
             <a href="#tipping">Tipping</a>
             <a href="#claim">Claim</a>
             <a href="#snapshot">Snapshot</a>
@@ -1040,15 +1117,6 @@
     </div>
 
     <div class="features-section">
-        <div id="tipping" style="position: relative;">
-            <img src="Images/Tip.png" alt="Tipping" class="feature-image">
-            <div class="tipping-text-overlay">
-                <h3>Tipping</h3>
-                <p>? How to Tip 🔸 <br>
-                Spread the love in our /nuts channel  Once you've got your 🥜 allowance, tip your friends by typing:
-                 *(Number)x🥜*  It's a simple, fun way to share the wealth and strengthen our community</p>
-            </div>
-        </div>
         <div id="claim" style="position: relative;">
             <img src="Images/Claim.png" alt="Claim" class="feature-image">
             <div class="claim-text-overlay">
@@ -1063,6 +1131,15 @@
                 <h3>Snapshot</h3>
                 <p>? When is Snapshot🔸<br>
                 The snapshot for Season 1 happens on June 28   Make sure you're holding your NFTs by then to secure your spot</p>
+            </div>
+        </div>
+        <div id="tipping" style="position: relative;">
+            <img src="Images/Tip.png" alt="Tipping" class="feature-image">
+            <div class="tipping-text-overlay">
+                <h3>Tipping</h3>
+                <p>? How to Tip 🔸 <br>
+                Spread the love in our /nuts channel  Once you've got your 🥜 allowance, tip your friends by typing:
+                 *(Number)x🥜*  It's a simple, fun way to share the wealth and strengthen our community</p>
             </div>
         </div>
     </div>
